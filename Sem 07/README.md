@@ -254,4 +254,4 @@ const int * const == int const * const – константен пойнтър �
 
 7. Напишете импелментация на **getCharoOccurrencesCount** - *брой срещания на кнокретен символ в текст*.
 
-P.s. All credits for these materials go to Nikola Svetoslavov.
+P.s. All credits for these materials go to Nikola Svetoslavov. :pray:
