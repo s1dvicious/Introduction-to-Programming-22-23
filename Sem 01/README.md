@@ -1,4 +1,4 @@
-Да разгледаме следното парче код  
+Consider the following piece of code  
 
 ```c++
 //Prints "Hello World!" to the monitor
@@ -13,11 +13,10 @@ cout<< "Hello World!";
 return 0;
 }
 ```
-
-Можем да си мислим за този код като множество инструкции, които даваме на компютъра да изпълни. Да разгледаме всеки един ред (последователно):   
-Първия ред - ```//Prints "Hello World!" to the monitor```. Това е коментар - неговото предназначение изцяло е да подпомага тези, които четат кода - самите нас включително. Писането на коментари се счита за добра практика при разработка на по-мащабни програми, под формата на "reminder" или "помощна" информация за някаква конкретна функционалност (обяснява накратко / или една идея по-обстойно какво прави, защо и т.н.). Компютърът изобщо не се занимава с коментарите - игнорира ги изцяло.  
-Следващия ред представлява предпроцесорна директива (те започват с #), като тя инструктира компютъра да даде достъп до всичките функционалности, които се съдържат в библиотеката <iostream> (input output stream), или стандартната библиотека за вход и изход. На практика #include хваща всичко, което намери в съответната директория и го слага на своето място.  
-  Как знае компютърът откъде да започне обаче? При изпълнение на програмата той намира функция наречена ***main*** и изпълнява всички инструкции, които се указват в нея:  
+We can think of this code as a set of instructions that we give the computer to execute. Consider each line (in turn):
+First line - ```//Prints "Hello World!" to the monitor```. This is a comment - its purpose is entirely to assist those reading the code - ourselves included. Writing comments is considered a good practice when developing larger programs, in the form of a "reminder" or "help" information about some specific functionality (explaining briefly / or an idea more thoroughly what it does, why, etc). The computer doesn't deal with the comments at all - it ignores them entirely.  
+The next line is a preprocessor directive (they start with #), instructing the computer to give access to all the functionality contained in the <iostream> library (input output stream), or the standard input and output library. In practice, #include grabs everything it finds in the appropriate directory and puts it in its place.  
+  How does the computer know where to start, though? When the program executes, it finds a function called ***main*** and executes any instructions that are specified in it:
   ```c++
 int main(){ //C++ programs start by executing the function main
 
@@ -26,92 +25,91 @@ int main(){ //C++ programs start by executing the function main
 return 0;   //indicates that the function has been executed successfully
 }
   ```
-  Всяка С++ програма трябва да има такава функция, за да знае откъде точно да започне. Функция на е практика последователност от инструкции, които се изпълняват от компютъра, следвайки същата наредба, по която са написани. Всяка функция (по-нататък ще се спрем по-подробно върху тях, засега приемаме нещата както са) има 4 части:
-  - return type, тук целочислена (или ***int***), от какъв тип ще е резултатът при изпълнение на функцията;
-  - Име - в нашия случай ***main***;
-  - Лист от параметри (вътре при кръглите скоби), като при нас той е пуст (празен);
-  - Тяло - огражда се с къдрави скобки { } , като именно там се слагат инструкциите, които трябва да се изпълнят.  
- 
+  Every C++ program should have such a function so that it knows exactly where to start. A function is effectively a sequence of instructions that are executed by the computer, following the same routine by which they were written. Each function (we'll go into more detail on these later, for now we're taking things as they are) has 4 parts:
+  - return type, here integer (or ***int***), of what type the result will be when the function is executed;
+  - Name - in our case ***main***;
+  - A sheet of parameters (inside at the round brackets), in our case it is empty (blank);
+  - Body - surrounded by curly braces { } , and this is where the instructions to be executed are put.
 ```c++
 cout << "Hello World!\n";
 ```
-Именно този ред изкарва "Hello World!" на екрана. В С++ символните низове (литералните) се ограждат с двойни човки ***"***, т.е. "Hello World!\n" е последователност от символи. Символът "\n" индикира преминаване на нов ред. ***cout*** (Character OUTput stream) e последователност от символи (байтове), които се "изливат" от програмата и "вливат" (буквално) в екрана, като по-точно той се нарича поток за стандартен изход (iostream библиотеката дава достъп до този поток, затова и я включваме), като стандартният изход е именно конзлата. Терминът "поток за изход" не се ограничава до нашия монитор - съществуват потоци, с помощта на които можем да пишем в текстови файлове, в други програми, мрежи, миялна машина, т.е. изцяло като "средство" за комуникация на една програма с външни устройства (като информацията излиза от програмата). Заедно с ***cout*** се появява непосредствено и операторът ***<<***, като за него можем да си мислим като за оператор (бинарен), който хваща всичко отдясно и го пълни в левия обект, т.е. пише върху потока.
+It is this line that brings "Hello World!" up on the screen. In C++, strings (literals) are surrounded by double ***"*** beaks, i.e. "Hello World!\n" is a sequence of characters. The symbol "\n" indicates a new line transition. The ***cout*** (Character OUTput stream) is a sequence of characters (bytes) that are "poured" from the program and "flowed" (literally) into the screen, more accurately it is called the standard output stream (the iostream library provides access to this stream, which is why we include it), the standard output being the console. The term "output stream" is not limited to our monitor - there are streams that we can use to write to text files, other programs, networks, the dishwasher, i.e. purely as a "means" for a program to communicate with external devices (with information coming out of the program). Along with ***cout***, the ***<<*** operator appears immediately, and we can think of it as a (binary) operator that grabs everything on the right and stuffs it into the left object, i.e. writes over the stream.
 
- ### Компилация 
-  С++ е компилиран език, т.е. за да се изпълни една програма тя трябва първо да се преведе от форма, която се чете лесно от човека, във форма, която машината може да разбере. Именно този превод се осъществава от ***компилатора***. Кодът, който пишем се нарича програмен код (source code), а това, което компюътърът изпълнява - изпълним код (executable code), обектен код (object code) или машинен код (machine code). Обичайно програмните кодове (тези, които се превеждат) завършват със суфикс .cpp (или .h за header-и, като те не се обработват, а използват при .cpp-тата) , а обектните - с .obj.  
+ ### Compilation 
+  C++ is a compiled language, i.e. in order to execute a program it must first be translated from a form that is easily readable by humans to a form that a machine can understand. It is this translation that is done by the ***compiler***. The code we write is called source code, and what the computer executes is called executable code, object code, or machine code. It is common for program codes (those that are translated) to end with the suffix .cpp (or .h for headers, as these are not processed but used in .cpp's) , and object codes with .obj.  
   <img src="https://hackingcpp.com/cpp/slides/cpp_separate_compilation_03.svg" width=50% height=50%>  
-  Компилаторът чете кода и гледа дали е граматически коректен - ако всяка дума в него има точно дефинирано значение, а също и дали има нещо некоректно, което може да бъде открито преди изпълнение на програмата. 
+  The compiler reads the code and looks to see if it is grammatically correct - if every word in it has a precisely defined meaning, and also if there is anything incorrect that can be detected before the program executes. 
   
-  ## Линкване
-  Една програма обичайно се състои от много различни части, които доста често се разработват от различни хора. Различните части трябва да се компилират и получените обектни кодове трябва да се свържат заедно, за да формират една изпълнима програма (executable program). "Устройството", което се занимава с това свързване (linking) се нарича линкер (linker). Например при компилация на горния код се изпълнява нашата и създава "source.obj" файл, а също и "ostream.obj" такъв, след което линкерът ги свързва в и създава "source.exe".
-  Грешки, сигнализирани от компилатора се наричат "compile-time errors", а от линкера - "link-time errors", а такива, които се появяват в хода на изпълнение на програмата - "run-time errors". Обикновено грешките при компилация са най-лесни за разбиране и съответно за оправяне от тези при свързване.
+  ## Linking
+  A program usually consists of many different parts, which are quite often developed by different people. The different parts must be compiled and the resulting object codes must be linked together to form an executable program. The "device" that does this linking is called a linker. For example, when compiling the above code, ours is executed and creates a "source.obj" file and also an "ostream.obj" one, then the linker links them in and creates a "source.exe".
+  Errors signaled by the compiler are called "compile-time errors", errors signaled by the linker are called "link-time errors", and errors that occur during program execution are called "run-time errors". Usually compile-time errors are the easiest to understand and therefore to fix than link-time errors.
 
-## 3. Примитивни типове данни
+## 3. Primitive data types
   
-  Добре де, предишната програма не прави повече от това да пише нещо върху екрана - не чете нищо, не приема никакъв вход от потребителя. Истинските програми реализират резултати при подаден вход, вместо да правят едно и също нещо всеки път.   
-  За да прочетем нещо ни е необходимо някакво парче в паметта, където да го запазим. Такива парчета наричаме обекти. Обект е точно парче от памет с тип, който указва какво количество информация може да се складира на негово място. Обект с име се нарича променлива.  
-  Съществуват множество променливи (или както ги наричаме - примитивни типове данни) при С++. Обаче, 4 от тях са напълно достатъчни за напис на една добре работеща (към момента) програма. Те са:
-  - Целочислени (integer) или ***int*** - както и името им подсказва в тях се държат цели числа, като те заемат 4 байта (или 32 бита) в паметта;
-  - Числа с плаваща запетая (double или double precision floating point) - те се използват за числа, които представляват "апроксимация" на реалните числа. Такива числа са например 2.552, 3.14159 и т.н. - 8 байта в паметта. В допълнение, аналогично на ***double*** - ***float*** носи същото значение (с плаваща запетая) с разликата, че заема 4 байта в паметта, а оттам идва и по-ниска степен на точност при апроксимация;
-  - Символни променливи (character) или ***char*** - това са променливи, които държат точно един символ, като литералните такива биват ограждани с ' '. Например 'a', 'X', '9' и т.н., - 1 байт;
-  - Булеви (boolean) или ***bool*** - за логически променливи, както техните възможни стойности са две - 1 или 0 (true или false) - 1 байт в паметта;  
+  OK de, the previous program does no more than write something on the screen - it reads nothing, accepts no input from the user. Real programs implement results on input, rather than doing the same thing every time.   
+  To read something we need some piece of memory to store it in. We call such pieces objects. An object is just a piece of memory with a type that specifies what amount of information can be stored in its place. An object with a name is called a variable.  
+  There are many variables (or as we call them, primitive data types) in C++. However, 4 of them are quite sufficient for writing a well working (at the moment) program. They are:
+  - Integer or ***int*** - as their name suggests they hold integers, and they take up 4 bytes (or 32 bits) of memory;
+  - Floating point numbers (double or double precision floating point) - these are used for numbers that are an "approximation" of real numbers. Such numbers are, for example, 2.552, 3.14159, etc. - 8 bytes in memory. In addition, analogous to ***double*** - ***float*** has the same meaning (floating point) with the difference that it occupies 4 bytes in memory, and hence a lower degree of accuracy in approximation;
+  - Character variables (character) or ***char*** - these are variables that hold exactly one character, literal ones being surrounded by ' '. For example, 'a', 'X', '9', etc., - 1 byte;
+  - Boolean or ***bool*** - for logical variables, as their possible values are two - 1 or 0 (true or false) - 1 byte in memory;  
 
-sizeof оператор - използва се за намиране на размера (в байтове), който даден обект (израз/променлива) окупира в паметта. Например  
+sizeof operator - used to find the size (in bytes) that an object (expression/variable) occupies in memory. For example  
 ```c++
 int n;
 std::cout<< sizeof(n) << " "<<sizeof(int) // prints 4 4
          << sizeof(char) ;                // prints 1
 ``` 
-### Модификатори при примитивните типове данни
-Те се ползват за вградените типове данни, като модифицират количеството памет, което те заемат, а също и ограничения по отношение на стойностите (положителни/отрицателни), които могат да им се задават.  
-От миналия път знаем, че int-a може да съдържа както положителни, така и отрицателни целочислени числа. Аналогично и при double-a. Съществуват модификатори (друг тип типове данни), които ограничават това условие, т.е. окупират същото място в паметта, но допускат единствено положителни променливи. Това става със запазената дума (която се ползва като префиксна) ***unsigned*** (т.е. няма знак). Също можем и да индикираме, че дадена променлива допуска както положителни, така и отрицателни стойности, като това става с ***signed*** (int, double,float, char по дефиниция са signed, затова ползването й не е от особена релевантност, освен ако изрични при декларация не искаме да укажем, че ще работим и с отрицателни стойности).  
-Друг тип модификатори, които могат да се ползват са:
+### Modifiers in primitive data types
+These are used for built-in data types, modifying the amount of memory they occupy and also constraining the values (positive/negative) that can be assigned to them.  
+We know from last time that int-a can contain both positive and negative integers. Similarly for double-a. There are modifiers (another data type) that restrict this condition, i.e. occupy the same memory space, but only allow positive variables. This is done with the reserved word (which is used as a prefix) ***unsigned*** (i.e. no sign). We can also indicate that a variable accepts both positive and negative values by using ***signed*** (int, double,float, char are all signed by definition, so its use is not particularly relevant unless we explicitly want to indicate that we will work with negative values in a declaration).  
+Other types of modifiers that can be used are:
 - short
-- long  
-Като именно това са модификаторите за памет - short е за по-малки променливи, докато long - за по-големи.
+- long    
+This is what memory modifiers are - short is for smaller variables, while long is for larger ones.
 https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191113121347/ModifiersInC.png  
-При тях имаме, че ```long~int, short int~short``` (т.е. дали ще пишем едното или другото - няма значение). Също при декларация, изпускайки int по презумпция се декларират ```short, long, long long ~ short int, long int, long long int``` и т.н.  
-signed/unsigned не се поддържа от С++ при числата с плаваща запетая.
+With these, we have that ``long~int, short int~short`` (i.e. whether we write one or the other doesn't matter). Also when declaring, omitting int by default declares ``short, long, long long ~ short int, long int, long long int`` etc.  
+signed/unsigned is not supported by C++ for floating point numbers.
 
 <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191113121347/ModifiersInC.png" width=75% height=75%>   
   
    
-  - Декларация - представлява израз, който указва на компилатора за съществуването на дадена променлива, като осигурява както името й, така и типа и. Синтаксисът за декларация (и инициализация) на променлива е  
+  - Declaration - is an expression that tells the compiler about the existence of a variable, providing both its name and its type. The syntax for declaring (and initializing) a variable is  
   ```c++
-<тип> <име> = (<стойност>)  
+<type> <name> = (<value>)  
   ```
-  Например  
+  For example  
   ```c++
-  int N = 50;          //N is an integer variable with value 50
-  double PI = 3.14159  //PI is a double variable with value 3.14159
-  bool flag = 0;       //flag is a boolean variable with value 0, i.e. false
-  char symbol = 'x';   //symbol is a char variable with value 'x'
+  int N = 50; //N is an integer variable with value 50
+  double PI = 3.14159 //PI is a double variable with value 3.14159
+  bool flag = 0; //flag is a boolean variable with value 0, i.e. false
+  char symbol = 'x'; //symbol is a char variable with value 'x'
   ```
-  Важно при наименованията на променливите е, че те могат да съдържат единствено букви (малки/главни), цифри и долни черти, като обезателно започват с буква (или долна черта). Запазени думи (такива като int, main, return и т.н.) не могат да се преизползват като имена на променливи.  
-  Добре, а ако искаме потребителят да им зададе стойност? С други думи, възможно ли е стойността на променлива да не е известна при изпълнение на програмата, а да се задава в последствие, т.е. при изпълнение? Възможно е, като това се дава с помощта на 
-  По подобие на потока за стандартен изход, потокът за стандартен вход (Character INput stream) или ***cin*** осъществява връзка между програмата и външно устройство, с разликата, че в този случай информацията идва от стандартния вход, който по подразбиране е клавиатурата. Т.е. в този случай посоката, по която се движат байтовете е от външното устройство към програмата. Синтаксисът е:  
+  An important thing about variable names is that they can only contain letters (upper/lower case), numbers and underscores, and they must start with a letter (or underscore). Reserved words (such as int, main, return, etc.) cannot be reused as variable names.  
+  Okay, what if we want the user to assign them a value? In other words, is it possible that the value of a variable is not known when the program is executed, but is set later, i.e. at runtime? It is possible, and this is given by 
+  Similar to the standard output stream, the standard input stream (Character INput stream) or ***cin*** makes a connection between the program and an external device, the difference being that in this case the information comes from the standard input, which is the keyboard by default. That is, in this case the direction the bytes are moving is from the external device to the program. The syntax is:  
   ```c++
   int N;
   cin >> N; //input from the keyboard is flown into cin and cin flows the bytes into N;
   ```
-  Т.е. операторът >> хваща потока за вход и налива всичката информация в N. Важно е, че той е type-sensitive, т.е. очаква вход от тип, съответстващ на типа, който стои отдясно. Той игнорира напълно whitespace-ове в конзолата, т.е. кара наред по спейсовете докато не стигне някакви данни - чете ги, докато не стигне следващия whitespace (или нов ред).  
-  Можем да комбинираме и няколко прочитания при едно ползване на стандартния вход, т.е. 
+  That is, the >> operator catches the input stream and pours all the information into N. Importantly, it is type-sensitive, i.e. it expects input of a type corresponding to the type on the right. It completely ignores whitespaces in the console, i.e. it drives along the spans until it gets some data - it reads it until it gets the next whitespace (or newline).  
+  We can also combine multiple reads in one use of the standard input, i.e. 
   ```c++
   int num1, num2, num3;
-  std::cin >> num1 >> num2 >> num3;   //Examplery input:   0    2.3       5; Then num1 = 0, num2 = 2, num3 = 5;
+  std::cin >> num1 >> num2 >> num3; //Examplery input: 0 2.3 5; Then num1 = 0, num2 = 2, num3 = 5;
   ```
   
-  ## Преобразуване между типове данни - safe & unsafe conversions
-   С++ предлага и скрито (имплицитно) преобразование между различните типове данни, когато това е необходимо. Например
+  ## Conversion between data types - safe & unsafe conversions
+   C++ also offers implicit (hidden) conversions between data types when necessary. For example
   
   ```c++
   char symbol = 'x';
-  int sInt = symbol;        //following the ASCII table, 'x' is translated (converted) into an integer and then assignment is performed
-  double sDouble = sInt;    //the righthand side (sInt) is converted to double, and then the assignment is performed
+  int sInt = symbol; //following the ASCII table, 'x' is translated (converted) into an integer and then assignment is performed
+  double sDouble = sInt; //the righthand side (sInt) is converted to double, and then the assignment is performed
   
   ```
-  при компилация получаваме ```x 120 120```, като 120 е символът 'x' в ASCII таблицата, като това е най-простият и безопасен начин за получаване на целочислената стойност на един символ (може и директно/експлицитно да се наложи конвертиране).  
-   В този смисъл - стойностите винаги се конвертират до равни такива (или за ***double***) до най-добрата апроксимация на стойността. Следните преобразования са безопасни (в смисъла, че не се губи информация, т.к. от "по-малко" парче памет се изгражда "по-голямо", т.е. не се реже):  
+  on compilation, we get ```x 120 120```, where 120 is the 'x' character in the ASCII table, and this is the simplest and safest way to get the integer value of a character (you may also need to convert directly/explicitly).  
+   In this sense - values are always converted to equal ones (or for ***double***) to the best approximation of the value. The following conversions are safe (in the sense that no information is lost, since a "smaller" piece of memory is used to build a "larger" one, i.e. it is not cut):  
   ```
 bool to char
 bool to int
@@ -120,38 +118,38 @@ char to int
 char to double
 int to double
   ```  
-  т.е. от променливи с по-малък размер до променливи с по-голям размер.  
+  i.e. from variables of smaller size to variables of larger size.  
   
   ```c++
   double d1 = 2.5;
-  double d2 = d1 + 2;   //Here 2 will be converted to 2.0 and added to 2.5, resulting in 4.5;
+  double d2 = d1 + 2; //Here 2 will be converted to 2.0 and added to 2.5, resulting in 4.5;
   ```
   
   ```c++
   char symbol = 'x';
-  int n = 20 + symbol;  // converts 'x' to 120 (following the ASCII table) and adds 20 to it
+  int n = 20 + symbol; // converts 'x' to 120 (following the ASCII table) and adds 20 to it
   ```
   
   # Unsafe conversions
   
-  Под небезопасно преобразуване имаме в предвид преобразувания в стойност, която не е равна на първоначалната. Например
+  By unsafe conversions we mean conversions to a value that is not equal to the original value. For example
   
   ```c++
   int a = 2000;  
   char symbol = a;
   
-  std::cout<<symbol;  // trying to fit an int into a char - loss of information
+  std::cout<<symbol; // trying to fit an int into a char - loss of information
   ```
-  или
+  or
   
   ```c++
   double PI = 3.14159;
-  int number = PI;     //casts PI into an integer with rounded (to 0) value of 3
+  int number = PI; //casts PI into an integer with rounded (to 0) value of 3
   
-  std::cout<< number;  //prints 3
+  std::cout<< number; //prints 3
   ```
-  тук number се закръгля (до по-малкото целочислено число) до 3, т.е. губим частта след десетичната запетая.  
-  Такива небезопасни закръгляния се получават доста често, в общия случай когато се опитаме да преобразуваме една по-голяма по размер променлива до по-малко такава. Всички от преобразуванията  
+  here number is rounded (to the smaller integer) to 3, i.e. we lose the decimal part.  
+  Such unsafe roundings occur quite often, generally when we try to convert a larger variable to a smaller one. All of the conversions  
   ```
   double to int
 double to char
@@ -160,33 +158,33 @@ int to char
   int to bool
 char to bool
   ```  
-  се допускат от компилатора, макар и да са небезопасни (той все пак дава и индикация за потенциална загуба на информация).  
+  are allowed by the compiler, even though they are unsafe (it still gives an indication of potential information loss).  
   
-  ## Операции с примитивни типове данни
-В С++ има два типа оператори:  
-  - Унарни (на един аргумент)
-  - Бинарни (на два аргумента)  
+  ## Operations with primitive data types
+There are two types of operators in C++:  
+  - Unary (per argument)
+  - Binary (on two arguments)  
   
-Те се характеризират с 
-  - Приоритет - при изрази с повече от един на брой оператора, определят последователността, в която ще бъдат извършени операциите;
-  - Асоциативност - при изрази с оператори от еднакъв порядък, аналогично дефинират последователността, в която ще бъдат извършени операциите;
-  - Позиция на оператора спярмо аргумента - префиксен, инфиксен и суфиксен  
+They are characterized by 
+  - Priority - in expressions with more than one operator, determine the order in which the operations will be performed;
+  - Associativity - for expressions with operators of the same order, similarly define the sequence in which the operations will be performed;
+  - Position of the operator with the pair argument - prefixed, infixed and suffixed  
   <img src="https://camo.githubusercontent.com/21f088fc65ef9dd29585506b247898551d077c37e547c8adf5dad6f164b78084/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f75337132452e706e67" width=80% height=80%>  
-  # Пример 
+  # Example 
   
   ```
-  Разглеждаме израза a~b~c~d~f. Нека бинарната операция ~ е:
-- ляво асоциативна. Тогава израза приема вида (((a~b)~c)~d)~f)
-- дясно асоциативна. Тогава израза приема вида (a~(b~(c~(d~f))))
+  Consider the expression a~b~c~d~f. Let the binary operation ~ be:
+- left associative. Then the expression takes the form (((a~b)~c)~d)~f)
+- right associative. Then the expression takes the form (a~(b~(c~(d~f))))
   ```
  
-  ## Аритметични оператори - +, -, *, /, %, ++, - -,
+  ## Arithmetic operators - +, -, *, /, %, ++, - -,
   
-  5те аритметични оператора, които се предоставят в С++ са  
+  The 5 arithmetic operators provided in C++ are  
    <img src="https://i.imgur.com/TdljFD7.jpg" width=20% height=20%>  
-  Като всяка една от тях съответства на математическото си значение. Единствено % може да се използва само при int-ове.  
+  With each one corresponding to its mathematical meaning. Only % can only be used with int's.  
   
-  Например
+  For example
   ```c++
   int a = 10,
       b = 3;
@@ -194,7 +192,7 @@ char to bool
   std::cout << a%b;
   ```
   
-  изкарва като резултат 1, т.к. 10 е сравнимо с 1 по модул 3 (или 10 = 1 (mod 3) , което е еквивалентно на това, че съществува n, такова че 10 = 3*n + 1). Аналогично
+  outputs 1 as the result, i.e. 10 is comparable to 1 modulo 3 (or 10 = 1 (mod 3) , which is equivalent to there being n such that 10 = 3*n + 1). Similarly
   
   ```c++
   int a = 10,
@@ -202,9 +200,9 @@ char to bool
   
   std::cout << a%b;
   ```
-  Изкарва 0, т.к. 10 се дели на 5.  
+  Outputs 0, i.e. 10 is divisible by 5.  
   
-  Делението също съответства на математическата си дефиниция, като ако при деление на int-ове остатъкът не е равен на 0, то числото се свежда до по-малкото цяло такова. Например  
+  Division also conforms to its mathematical definition, in that if the remainder is not equal to 0 when dividing int's, the number is reduced to the smaller integer. For example  
   
   ```c++
   int a = 10,
@@ -212,16 +210,16 @@ char to bool
   
   std::cout << a/b;
   ```
-  Изкарва 3, или онова n, за което е вярно, че 10 = 3*n + 1.  
+  Outputs 3, or that n for which it is true that 10 = 3*n + 1.  
   
- Операторите за инкрементиране (++) и декрементиране (--) не са нищо повече от 
+ The increment (++) and decrement (--) operators are nothing more than 
   ```c++
   int a = 5;
   a++; 
   //or equivalently
   a = a + 1;
   ```
-  и за декрементиране
+  and for decrementing
   ```c++
   int a = 5;
   a--;
@@ -229,24 +227,24 @@ char to bool
   a = a - 1;
   ```
   
-  Има една важна особеност при тези оператори, а именно, че те могат да се използват както като префиксни, така и като суфиксни, т.е. те могат да се използват както преди, така и след самата променлива. На пръв поглед това е незначително, но има огромно значение при пресмятане на изрази - дали ще се използва като префикс или суфикс:   
+  There is one important feature of these operators, namely that they can be used both as prefix and suffix operators, i.e. they can be used both before and after the variable itself. At first glance this is insignificant, but it makes a huge difference when evaluating expressions - whether it will be used as a prefix or a suffix:   
 ```c++
 int x = 3;
-int y = ++x;    //the value of x is incremented by one, and then the expression is evaluated
+int y = ++x; //the value of x is incremented by one, and then the expression is evaluated
 	
-std::cout<< y;  //prints 4
+std::cout<< y; //prints 4
 ```
-докато като суфикс имаме  
+while as a suffix we have  
 ```c++
 int x = 3;
-int y = x++;    //the expression is first evaluated, and then the value of x is incremented
+int y = x++; //the expression is first evaluated, and then the value of x is incremented
 	
-std::cout<< y;  //prints 3	
+std::cout<< y; //prints 3	
 ```
   
   
-## Съставни аритметични оператори - =, +=, -=, /=, *=, %=, &=, |=
-Всеки един от тях не е нищо повече от  
+## Compound arithmetic operators - =, +=, -=, /=, *=, %=, &=, |=
+Each of these is nothing more than  
   
 ```c++
 a+=b is equivalent to a = a + b
@@ -254,14 +252,14 @@ a-=b is equivalent to a = a - b
 a/=b is equivalent to a = a / b
 a*=b is equivalent to a = a * b
 ```
-като от съществено значение е, че те променят стойността на променливата (т.е. работят върху нея)
+essential that they change the value of the variable (i.e. work on it)
   
-  ## Оператори за сравнение - ==, <, >, <=, >=, !=  
-  Два израза могат да се сравняват, като се използват тези оператори.   
+  ## Comparison operators - ==, <, >, <=, >=, !=  
+  Two expressions can be compared using these operators.   
   
  <img src="https://i.imgur.com/9L1bknN.jpg" width=20% height=20%>  
   
-  Например, сравнявайки две цели числа 
+  For example, comparing two integers 
   ```c++
   int a = 5,
       b = 10;
@@ -270,7 +268,7 @@ a*=b is equivalent to a = a * b
   
   std::cout<< isGreater;
   ```
-  Изкарва ***1***, т.к. 10>5. Аналогично,  
+  Outputs ***1***, i.e. 10>5. Similarly,  
   
   ```c++
   int a = 3;
@@ -278,24 +276,24 @@ a*=b is equivalent to a = a * b
   bool res = b > a;
   std::cout << res;
   ```
-  Тук, за да се сравнят а и b - а се каства в double - става 3.0, след което се сравняват.  
+  Here, to compare a and b - a is cast to double - becomes 3.0, then compared.  
   
-  ## Логически оператори  &&, ||, !
-  Операторът ! представлява булевата операция отрицание, като обръща булевата променлива, върху която е приложена. Т.е. при обръщане false става true и обратно. Например  
+  ## Logical operators &&, ||, !
+  The ! operator represents the Boolean negation operation by reversing the Boolean variable to which it is applied. I.e., when reversed, false becomes true and vice versa. For example  
 ```c++
-!(5 == 5)   // evaluates to false because the expression at its right (5 == 5) is true
-!(6 <= 4)   // evaluates to true because (6 <= 4) would be false
-!true       // evaluates to false
-!false      // evaluates to true
+!(5 == 5) // evaluates to false because the expression at its right (5 == 5) is true
+!(6 <= 4) // evaluates to true because (6 <= 4) would be false
+!true // evaluates to false
+!false // evaluates to true
 ```
-Колкото до операторите && и || (те са бинарни) - те се използват при сравняване на две булеви променливи и отново връщат true/false. && отговаря на булевото И, докато || - на ИЛИ.  
+As for the && and || operators (they are binary) - they are used when comparing two boolean variables and again return true/false. && corresponds to the boolean AND, while || corresponds to OR.  
 <img src="https://i.imgur.com/MrkFGJY.jpg" width=20% height=20%> 
-	докато при ИЛИ имаме 
+	while with OR we have 
 <img src="https://i.imgur.com/5e7ENxn.jpg" width=20% height=20%>   
 	
-Например  
+For example  
 ```c++
-( (5 == 5) && (3 > 6) )  // evaluates to false ( true && false )
-( (5 == 5) || (3 > 6) )  // evaluates to true ( true || false )
+( (5 == 5) && (3 > 6) ) // evaluates to false ( true && false )
+( (5 == 5) || (3 > 6) ) // evaluates to true ( true || false )
 ```
 	
