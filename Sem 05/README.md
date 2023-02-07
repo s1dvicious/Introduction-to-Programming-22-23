@@ -1,29 +1,29 @@
-## Масиви (с фиксирана дължина)
+## Arrays (fixed length)
 
-**Масивът** е наредена последователност от елементи от един тип.
-Отделен елемент на масива се достъпва посредством името на масива, последвано от поредния номер (индекс) на елемента в квадратни скоби.
+An **array** is an ordered sequence of elements of the same type.
+An individual array element is accessed by the array name followed by the sequence number (index) of the element in square brackets.
 
 ```c++
-<тип> <име>[<размер>]
+<type> <name>[<size>]
 ```
 ![array-example](https://simplesnippets.tech/wp-content/uploads/2018/03/array-diagram.jpg)
 
-## Инициализация на масиви
+## Array initialization
 
 ```c++
-int arr[5]; // Създава масив от 5 елемента, всеки от които е цяло число.
-int arr2[] = {34, 21, 2, 66, 567}; // Създава масив от 5 елемента.
-int arr3[5] = {1,2,3}; //Останалите елементи се запълват с default-на стойност. 
-int arr4[]; //грешка
-int arr5[4] = {1, 2, 3, 4, 5} // грешка
+int arr[5]; // Creates an array of 5 elements, each of which is an integer.
+int arr2[] = {34, 21, 2, 66, 567}; // Creates an array of 5 elements.
+int arr3[5] = {1,2,3}; // The remaining elements are filled with the default value. 
+int arr4[]; //error
+int arr5[4] = {1, 2, 3, 4, 5} // error
 ```
 
-Задължително големината на масива трябва да е константа, чиято стойност е ясна преди да се компилира програмата.
+The size of the array must be a constant whose value is clear before the program is compiled.
 
 ```c++
 int n;
 cin >> n;
-int arr[n]; //грешка!
+int arr[n]; //error!
 ```
 
 ```c++
@@ -121,7 +121,7 @@ int main()
 }
 ```
 
-Масивите се подават във функциите по адрес!  <br />
+Масивите се подават във функциите по адрес! <br />
 Т.е промените, които се правят върху масива във функцията, ще се отразят върху подадения като параметър масив! <br />
 
 ## Задачи
@@ -161,8 +161,8 @@ int main() {
 }
 ```
 
-- Линейно търсене в масив.
-- Двоично (логаритмично) търсене - за сортирани масиви.
+- Linear array search.
+- Binary (logarithmic) search - for sorted arrays.
 ```c++
 bool linearSearch(int arr[], unsigned size, int element) {
 	for (unsigned i = 0; i < size; ++i) {
@@ -197,7 +197,7 @@ bool binarySearch(int arr[], unsigned size, int element) {
 	return false;
 }
 ```
-- Решето на Ератостен.
+- Eratosthenes' solution.
 
 ```c++
 void init(bool arr[], const unsigned size, bool value) {

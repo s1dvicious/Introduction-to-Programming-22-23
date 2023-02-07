@@ -1,30 +1,30 @@
-**Задача 1:** Да се напише функция, която приема масив и връща дали е палиндром.
+**Problem 1:** Write a function that accepts an array and returns whether it is a palindrome.
 
-*Вход: [1 2 3 2 1], Изход: true*
+*Input: [1 2 3 2 1], Output: true*
 
-**Задача 2** Да се напише функция, която приема масив и връща най-малкото общо кратно на числата в масива.
+**Task 2** Write a function that takes an array and returns the least common multiple of the numbers in the array.
 
-*Вход: [9 18 6 12], Изход: 36*
-
-
-**Задача 3** Да се напише функция, която приема масив и връща най-големият общ делител на числата в масива.
-
-*Вход: [9 18 6 12], Изход: 3*
-
-**Задача 4 :** Да се напише функция, която приема масив и връща дали е конкатенация на два масива, които са палиндроми.
-
-*Вход: [1 2 3 2 1 4 5 5 4], Изход: true*
-
-*Вход: [1 2 3 4 5], Изход: false*
-
-*Вход: [1 2 3 2 1], Изход: true*
+*Input: [9 18 6 12], Output: 36*
 
 
-**Задача 5 :** Въвежда се число N (N <= 1000) и N цели числа (елементи на масив).
-Да се отпечатат броя на инверсиите в масива.
+**Problem 3** Write a function that takes an array and returns the greatest common divisor of the numbers in the array.
 
-Инверсия ще наричаме двойка индекси (i,j), където i < j  и arr[i] > arr[j]
+*Input: [9 18 6 12], Output: 3*
 
-*Вход: 6 [5 4 3 2 1 0]  Изход: 15* //в масива [5 4 3 2 1 0]  има 15 инверсии.
+**Problem 4 :** Write a function that takes an array and returns whether it is a concatenation of two arrays that are palindromes.
 
-*Вход: 5 [10 11 12 13 14], Изход: 0*
+*Input: [1 2 3 2 1 4 5 5 4], Output: true*
+
+*Input: [1 2 3 4 5], Output: false*
+
+*Input: [1 2 3 2 1], Output: true*
+
+
+**Problem 5 :** Enter a number N (N <= 1000) and N integers (elements of an array).
+Print the number of inversions in the array.
+
+We will call an inversion a pair of indices (i,j) where i < j and arr[i] > arr[j]
+
+*Input: 6 [5 4 3 2 1 0] Output: 15* //there are 15 inversions in the array [5 4 3 2 1 0].
+
+*Input: 5 [10 11 12 13 14], Output: 0*
