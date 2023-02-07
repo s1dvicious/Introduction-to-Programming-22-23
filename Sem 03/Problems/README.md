@@ -1,70 +1,70 @@
-**Задача 1:** Да се напише програма, която приема поток от числа. Числата се събират, докато не се въведе числото 0. Тогава трябва да се отпечата акумулираният резултат и да програмата да приключи.  
-да се изведе на конзолата 
+**Task 1:** Write a program that accepts a stream of numbers. The numbers are added until the number 0 is entered. Then the accumulated result should be printed and the program should be terminated.  
+To output the result to the console 
 
-*Вход: 1 2 3 4 5 6 0, Изход: 21*
+*Input: 1 2 3 4 5 6 0, Output: 21*
 
-*Вход: 9 9 1 0, Изход: 19*
+*Input: 9 9 1 0, Output: 19*
 
-*Вход: 5 4 3 0 Изход: 12*
+*Input: 5 4 3 0 Output: 12*
 
-**Задача 2:** Да се напише програма, която приема 2 числа. Да се отпечатат всички общи делители сортиран наобратно.
+**Problem 2:** Write a program that accepts 2 numbers. Print all common divisors sorted backwards.
 
-*Вход: 28 21, Изход: 7 1*
+*Input: 28 21, Output: 7 1*
 
-*Вход: 60 30 Изход: 30 15 10 6 5 3 2 1*
+*Input: 60 30 Output: 30 15 10 6 5 3 2 1*
 
-*Вход: 19 17 Изход: 1*
-
-
-**Задача 3:** Въвежда се число с произволен брой цифри. Да се отпечата числото, обърнато наобратно инкрементирано.
-
-*Вход: 31421, Изход: 12414*
-
-*Вход: 1243123 Изход: 3213422*
+*Input: 19 17 Output: 1*
 
 
-**Задача 4:** Да се напише програма, която приема 2 числa - a и b и отпечатва всички прости числа в интервала [a, b].  
+**Problem 3:** Enter a number with any number of digits. Print the number backwards incremented.
+
+*Input: 31421, Output: 12414*
+
+*Input: 1243123 Output: 3213422*
 
 
-*Вход: 10 20, Изход: 11 13 17 19*
-
-*Вход: 20 1, Изход:*
-
-*Вход: 1 20 Изход: 2 3 5 7 11 13 17 19*
-
-**Задача 5:** Да се напише програма, която приема цяло число и отпечатва дали е степен на 2-ката.
-
-*Вход: 1 , Изход: true*
-
-*Вход: 20 Изход: false* 
-
-*Вход: 1024  Изход: true*
-
-**Задача 6:** Въвеждат се 5 цели числа - a,b,c,d, e. 
-Разглеждаме полинома f(x) = a * x^4 + b * x^3 + c* x^2 + d * x + e.
-Отпечатайте всички цели решения на f(x) >= 0 където x e в интервала [-100, 100]
+**Problem 4:** Write a program that takes 2 numbers - a and b and prints all prime numbers in the interval [a, b].  
 
 
-*Вход: -1 4 0 8 1 , Изход: -1 0 2 3*
+*Input: 10 20, Output: 11 13 17 19*
 
-*Вход: 0 0 -1 5 -6  Изход: 2 3* 
+*Input: 20 1, Output:*
 
-**Задача 8:** Да се напише програма, която приема цяло положително число n и отпечатва следната пирамида от доларчета
+*Input: 1 20 Output: 2 3 5 7 11 13 17 19*
 
-*Пример:*
+**Problem 5:** Write a program that takes an integer and prints whether it is a power of 2.
+
+*Input: 1 , Output: true*
+
+*Input: 20 Output: false* 
+
+*Input: 1024 Output: true*
+
+**Problem 6:** Input 5 integers - a,b,c,d, e. 
+Consider the polynomial f(x) = a * x^4 + b * x^3 + c * x^2 + d * x + e.
+Print all integer solutions of f(x) >= 0 where x e in the interval [-100, 100]
+
+
+*Input: -1 4 0 8 1 , Output: -1 0 2 3*
+
+*Input: 0 0 -1 5 -6 Output: 2 3* 
+
+**Problem 8:** Write a program that takes a positive integer n and prints the following pyramid of dollars
+
+*Example:*
 
 ![enter image description here](https://i.ibb.co/SNqW5YF/Capture.png)
 
 
-**Задача 9:** Да се напише програма, която приема цяло положително число n и отпечатва следната пирамида  от числа (подравнена надясно)  
+**Problem 9:** Write a program that takes a positive integer n and prints the following pyramid of numbers (right justified)  
 
-*Пример:*
+*Example:*
 
 ![enter image description here](https://i.ibb.co/wyPfryz/Capture4.png)
 
 
-**Задача 10:** Да се напише програма, която приема цяло положително число n и отпечатва числата от 1 до n*n в спираловиден вид **(тип 1)*
+**Problem 10:** ** Write a program that takes a positive integer n and prints the numbers 1 to n*n in a spiral form **(type 1)*
 
-*Пример:*
+*Example:*
 
 ![enter image description here](https://i.ibb.co/KF7TcH6/Capture6.png)
