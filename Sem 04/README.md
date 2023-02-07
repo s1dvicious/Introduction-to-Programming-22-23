@@ -1,8 +1,8 @@
-Да разгледаме следната задача:   
+Consider the following problem:   
 
-**Задача 1:** Въвежда се неотрицателно число n. Да се отпечатат всички двойки прости числа, които са във вида 6k-1 и  6k+1, и са по-малки от n.  
+**Problem 1:** Enter a non-negative number n. Print all pairs of prime numbers that are of the form 6k-1 and 6k+1, and are less than n.  
 
-Задачата решаваме по следния начин:  
+Solve the problem as follows:  
 
 ```c++
 int main()
@@ -41,7 +41,7 @@ int main()
 	}
 }
 ```
-Забелязваме, че следното парче от код
+Notice that the following piece of code
 ```c++
 //prime check
 		bool isFirstPrime = true;
@@ -55,11 +55,11 @@ int main()
 		if (!isFirstPrime)
 			continue;
 ```
-се повтаря два пъти - и двата в контекста на две различни числа, но логиката се дублира, като това е една стандартна ситуация в програмирането, която целим да елиминираме доколкото е възможно. И така, въпросът е - не е ли възможно да съберем тези инструкции, като ги именуваме и вместо всеки път, когато ни е необходима тази конкретна функционалност - вместо да copy/paste-ваме, просто да извикаме името на тази група? Отговорът е положителен и той се дава от
+is repeated twice, both in the context of two different numbers, but the logic is duplicated, which is a standard programming situation that we aim to eliminate as much as possible. So, the question is - isn't it possible to collect these instructions by naming them, and instead of copy/paste-ing each time we need that particular functionality - just call the name of that group? The answer is yes and it is given by
 
-## Функции
+## Functions
 
-Функция представлява съвкупност от инструкции, която притежава име и може да се извика от всяко място в програмата. Синтаксисът при декларация (и дефиниция) на функция е  
+A function is a set of instructions that has a name and can be called from anywhere in the program. The syntax for declaring (and defining) a function is  
 
 ```c++
 <data-type> name(<parameter-1>, <parameter-2>,...,<parameter-n>){
@@ -67,18 +67,18 @@ int main()
    
   }
 ```
-където:  
-- ***data-type*** е типът (например char, float, int etc.) на стойността, който бихме получили като резултат в следствие на изпълнение на функцията (при return-ване);
-- ***name*** - името или идентификатор, чрез който се извиква функцията - тук важат същите правила за именуване, както и при променливите;
-- ***parameters*** - всеки параметър се състои от ***тип*** и ***идентификатор***, като всеки два параметъра се разделят със запетая. Те представляват нищо повече от декларация на една (локална за функцията) променлива. Предназначението им е да се позволи подаване на аргументи към функцията от мястото, на което тя бива извиквана;
+where:  
+- ***data-type*** is the type (e.g. char, float, int etc.) of the value we would get as a result of executing the function (on return);
+- ***name*** - the name or identifier by which the function is called - the same naming rules apply here as with variables;
+- ***parameters*** - each parameter consists of ***type*** and ***identifier***, with each two parameters separated by a comma. They represent nothing more than a declaration of a (function-local) variable. Their purpose is to allow arguments to be passed to the function from the location at which it is called;
 
-### Пример:
+### Example:
 ```c++
 int max(int n, int k){
 return n > k? n: k;
 }
 ```
-и при main-a имаме:
+and at main we have:
 
 ```c++
 int main(){
@@ -90,14 +90,14 @@ int z = max(x,y);
 return 0;
 }
 ```
-тук при извикване на функцията max се взимат стойностите на променливите x и y, след което се задават на локалните за max променливи - n и k. В резултат се прави проверка и се връща стойността на по-голямото от двете числа. Забележете, че можем да постъпим и така
+Here, when the max function is called, the values of the variables x and y are taken and then set to the local variables for max - n and k. The result is checked and the value of the larger of the two numbers is returned. Note that we can also do the following
 ```c++
 z = max(5, 10);
 ```
-и тук аналогично литералите 5 и 10 се задават на n и k, като наредбата, в който се случва това отговаря на наредбата на параметрите.  
-В момента на извикване при main функцията, управление на програмата се дава изцяло на функцията max: изпълнението на main-a спира и продължава едва тогава, когато завърши изпълнението на max. 
+and here similarly the literals 5 and 10 are set to n and k, the order in which this happens corresponding to the order of the parameters.  
+At the time of the call to the main function, control of the program is given entirely to the max function: execution of main stops and resumes only when execution of max finishes. 
 
-Например при горната задача онази функционалност, която можем да капсулираме в една функция е проверката за това дали (оттук и return type-a е bool) едно число е просто, а именно:  
+For example, in the above problem, the functionality that we can encapsulate in a function is the check for whether (hence return type is bool) a number is prime, namely:  
 
 ```c++
 bool isPrime(unsigned int k) {
@@ -115,8 +115,8 @@ bool isPrime(unsigned int k) {
 	return true;
 }
 ```
-Тук return-type-a очевидно е булев - подаденото като параметър (положително, оттук и unsigned) число или е просто, или не е. Колкото до //statement частта на тази функция - логиката напълно се наследява от първоначалното решение на задачата. Важно нещо също е, че всички променливи, които се декларират в тялото биват локални за нея и се изтриват (от паметта) когато завърши изпълнението на функцията, т.е. те не могат да бъдат достъпвани извън този scope.  
-Сега в main-a нещата изглеждат далеч по-чисти и прости:  
+Here return-type-a is obviously boolean - the number passed as a parameter (positive, hence unsigned) is either prime or it is not. As for the //statement part of this function - the logic is completely inherited from the original solution to the problem. Another important thing is that all variables that are declared in the body are local to it and are deleted (from memory) when the function finishes executing, i.e. they cannot be accessed outside this scope.  
+Now in main things look much cleaner and simpler:  
 ```c++
 int main() {
 
@@ -133,53 +133,53 @@ int main() {
 	return 0;
 }
 ```
-тук важното също е, че и при двете извиквания на функцията горе това, което се случва е, че се взима стойността, която се подава като параметър, и тя се задава на локалната (за isPrime) променлива - k, т.е. по този начин на извикване стойността се копира и се преизползва локално.
+Here the important thing is also that in both function calls above what happens is that the value that is passed as a parameter is taken and it is set to the local (for isPrime) variable - k, i.e. this way the value is copied and reused locally.
 
-### Примери:
+### Examples:
 
-**Задача 1:** Въвежда се неотрицателно число n. Да се отпечатат всички двойки прости числа, които са във вида 6k-1 и  6k+1.
+**Problem 1:** A non-negative number n is entered. Print all pairs of prime numbers that are of the form 6k-1 and 6k+1.
 
--решена без функции и решена с функции.
+-solved without functions and solved with functions.
 
-**Задача 2:** Напишете функция, която приема неотрицателно число n и връща числото обърнато
+**Problem 2:** Write a function that takes a non-negative number n and returns the number inverted
 
-*Вход: 288, Изход: 882*
+*Input: 288, Output: 882*
 
-**Задача 3:** Напишете функция, която приема неотрицателно число и връща дали числото е палиндром.
+**Problem 3:** Write a function that takes a non-negative number and returns whether the number is a palindrome.
 
-*Вход: 2882 Изход: true*
+*Input: 2882 Output: true*
 
-**Задача 4:** Напишете функция, която приема неотрицателни числа n и k и връща дали k е суфикс на n.
+**Problem 4:** Write a function that accepts nonnegative numbers n and k and returns whether k is a suffix of n.
 
-*Вход: 288, 88, Изход: true*
+*Input: 288, 88, Output: true*
 
-**Задача 5:** Напишете функция, която приема неотрицателни числа n и k и връща дали k е префикс на n.
+**Problem 5:** Write a function that accepts non-negative numbers n and k and returns whether k is a prefix of n.
 
-*Вход: 288, 28, Изход: true*
+*Input: 288, 28, Output: true*
 
-**Задача 6:** Напишете функция, която приема неотрицателни числа n и k и връща дали k е инфикс в n.
+**Problem 6:** Write a function that accepts nonnegative numbers n and k and returns whether k is an infix in n.
 
-*Вход: 2831, 83, Изход: true*
+*Input: 2831, 83, Output: true*
 
-**Задача 7:** Напишете функция, която приема неотрицателно число и връща дали цифрите му са сортирани (във възходящ или в низходящ ред).
+**Problem 7:** Write a function that accepts a non-negative number and returns whether its digits are sorted (in ascending or descending order).
 
-*Вход: 122239,  Изход: true*
+*Input: 122239, Output: true*
 
-**Задача 8:** Напишете функция, която приема неотрицателно число и връща дали цифрите му са еднакви.
+**Problem 8:** Write a function that takes a non-negative number and returns whether its digits are the same.
 
-*Вход: 111111,  Изход: true*
+*Input: 111111, Output: true*
 
-**Задача 9:** Напишете функция, която приема неотрицателно числа n и k връща n^k
+**Problem 9:** Write a function that takes a non-negative number n and k returns n^k
 
-*Вход: 3 4,  Изход: 81*
+*Input: 3 4, Output: 81*
 
-**Задача 10:** Напишете функция, която приема неотрицателно числа n и k връща log_k(n) (закръглено надолу)
+**Problem 10:** Write a function that takes non-negative numbers n and k returns log_k(n) (rounded down)
 
-*Вход: 90 3  Изход: 4*
+*Input: 90 3 Output: 4*
 
 
-## Функции без return type - void
-Горният синтаксис налага указване на конкретен тип, който връща функцията. Възможно е обаче функцията да не връща нищо, като в този случай <data-type>-а на функцията е void, като това е специален тип, който указва липса на стойност. Например следната функция, която само принтира на конзолата
+## Functions without return type - void
+The above syntax requires specifying a particular type that the function returns. However, it is possible for the function to return nothing, in which case the <data-type> of the function is void, which is a special type that indicates no value. For example, the following function, which only prints to the console
 
 ```c++
 void printHello(){
@@ -190,9 +190,9 @@ std::cout<<"Hello!\n";
 ```
 
 
-## Подаване на параметри по стойност и референция
+## Passing parameters by value and reference
 
-Да разгледаме следното парче код
+Consider the following piece of code
 ```c++
 void increment(int n){
 ++n;
@@ -206,7 +206,7 @@ std::cout<<n; //prints 5, i.e. the value is not incremented
 return 0;
 }
 ```
-където предназначението на increment функцията е да инкрементира аргумента си с 1ца. Причината, поради която не се променя стойността на n след подаване на функцията е, че стойността и се копира и се подава на локалната за increment променлива. Обаче, възможно е и друг вид подаване, а именно на самата променлива (а не само на стойността й) и това става чрез т.нар. референции (псевдоними):
+where the purpose of the increment function is to increment its argument by 1s. The reason why the value of n is not changed after the function is passed is that its value is copied and passed to the increment local variable. However, another kind of passing is possible, namely to the variable itself (not just its value) and this is done by so-called references (aliases):
 	
 ```c++
 void increment(int& n){
@@ -221,22 +221,22 @@ std::cout<<n; //prints 6
 return 0;
 }
 ```
-Т.е. вместо да копираме стойността, когато подаваме n като параметър - подаваме истинската променлива.  
-В общи линии референциите представляват променливи, които служат като псевдоним на други променливи. Синтаксисът за декларация на референция е
+That is, instead of copying the value when we pass n as a parameter - we pass the real variable.  
+Basically, references are variables that serve as aliases for other variables. The syntax for declaring a reference is
 ```c++
 int n = 5;
 	
-int& nRef = n;   // четем отдясно наляво - nRef е референция към int
+int& nRef = n; // read from right to left - nRef is a reference to int
 ++nRef;
 	
-std::cout<< n;  //prints 6, since n's value was incremented through a reference to n, namely through nRef
+std::cout<<< n; //prints 6, since n's value was incremented through a reference to n, namely through nRef
 ```
-Важен детайл при тях е, че при декларация те трябва да бъдат инициализирани (вързани за друг обект). След инициализация, референцията не може да бъде насочена към друга променлива.  
+An important detail about these is that they must be initialized (bound to another object) when declared. After initialization, the reference cannot be directed to another variable.  
 
-## Стек на извикванията  
-Преди всичко, всяка декларирана функция се запазва в паметта (транслира се в машинен код), като там се съдържа информация за всичките й компоненти - декларирани локални променливи, параметри, временни обекти и т.н.. 
-В стековата памет извикванията се базират (както е и името) на принципа LIFO (Last In First Out), или на принципа на структурата от данни стек. Това поражда и еквивалентния термин ***стекова решетка*** за извикванията на функциите. Най-просто, всяко извикване на една функция заделя памет, която се държи в специално място, наречено стекова рамка за функцията (или просто запис за улеснение), - за параметрите си, а също и за всичките локални променливи, която тя декларира (включително променливата, която се връща). Последователността, в която се декларират променливите е - първо параметрите, след това локалните променливи и накрая връщаната.  
-Да разгледаме следния пример  
+## Call stack  
+First of all, every declared function is stored in memory (translated into machine code), and there it contains information about all its components - declared local variables, parameters, temporary objects, etc. 
+In stack memory, calls are based (as the name implies) on the LIFO (Last In First Out) principle, or the stack data structure principle. This gives rise to the equivalent term ***stack grid*** for function calls. At its simplest, each call to a function allocates memory, which is held in a special place called the function's stack frame (or just a record for simplicity) - for its parameters, and also for all the local variables it declares (including the return variable). The sequence in which the variables are declared is - first the parameters, then the local variables and finally the return variable.  
+Consider the following example  
 ```c++
 void bar() {
 }
@@ -249,10 +249,10 @@ int main() {
   foo();
 }
 ```
-При изпълнение на програмата винаги първо се извиква ```main()``` функцията, като се записва извикването и се слага отгоре на стека. ```main()``` функцията извиква ```foo()```, като това извикване записва ```foo()``` отгоре на стека. След това се извиква ```bar()``` и се слага отгоре на стека. Когато приключи изпълението на ```bar()```, нейното извикване се премахва от стека. След това ```foo()``` се премахва, аналогично и ```main()``` в края на изпълнението си.  
-Следната фигура показва състоянието на стека след всяко извикване  
+When executing the program, the ``main()`` function is always called first, and the call is recorded and put on top of the stack. The ``main()`` function calls ``foo()``, and this call writes ``foo()`` to the top of the stack. It then calls ``bar()`` and puts it on top of the stack. When the execution of ```bar()`` is complete, its call is removed from the stack. Then ``foo()`` is removed, similarly ``main()`` at the end of its execution.  
+The following figure shows the state of the stack after each invocation  
 <img src="https://i.imgur.com/IUGxJPF.jpg" width=100% height=100%>  
-Да разгледаме следната една идея по-комплексна програма  
+Consider the following an idea more complex program  
 ```c++
 int plus_one(int x) {
   return x + 1;
@@ -266,19 +266,19 @@ int main() {
   int result = 0;
   result = plus_one(0);
   result = plus_two(result);
-  std::cout << result;             // prints 3
+  std::cout << result; // prints 3
 }	
 ```
-В началото на програмата ```main()``` се извиква първо, след което се прави запис, който държи една единствена локална променлива ```result```. След декларацията й тя се инициализира със стойност 0, след което се извиква ```plus_one(0)```. Това създава запис за ```plus_one()```, който съдържа параметър ```x```. Програмата задава стойност ```0``` на параметъра ```x```и се изпълнява тялото на функцията. Тялото изчислява стойността на ```(x+1)``` като взима стойността на ```x``` и добавя 1 към нея, като в резултат връща 1. Върнатата стойност 1 замества оригиналното извикване на ```plus_one(0)```, след което записа за ```plus_one()``` се изтрива от стека. След това се задава стойност 1 (върнатата от функцията) на променливата ```result```.  
-Следната фигура илюстрира състоянията на стека в хода на горните изпълнения.	
+At the beginning of the program, ``main()`` is called first, then a record is made that holds a single local variable ``result``. After its declaration, it is initialized with the value 0, and then ``plus_one(0)`` is called. This creates an entry for ``plus_one()`` that contains the parameter ``x``. The program sets the ```0``` value of the ``x`` parameter and executes the body of the function. The body calculates the value of ``(x+1)`` by taking the value of ``x`` and adding 1 to it, returning 1 as the result. The returned value 1 replaces the original call to ``plus_one(0)``, after which the entry for ``plus_one()`` is deleted from the stack. The value 1 (returned by the function) of the ``result`` variable is then set.  
+The following figure illustrates the states of the stack in the course of the above executions.	
 <img src="https://i.imgur.com/w7M2vEr.jpg" width=100% height=100%> 
-След това се продължава към извикването на ```plus_two(result)```. Първоначално на result се задава стойност 1 (от предишното извикване). След това се създава запис за ```plus_two()```, като за него се заделя памет за параметъра ```x```. Този запис се намира на същото място, където се е намирал и последния за извикването на ```plus_one(0)```, като това място се преизползва. След записа, параметърът ```x``` бива инициализиран със стойност 1. След това се изпълнява тялото на ```plus_two()```.  
-Тялото на ```plus_two()``` извиква ```plus_one(x+1)```. Изчислява се стойността на x + 1 = 2, след което се създава запис за ```plus_one()```, като се заделя място за параметъра ```x``` и в новия запис стойността му е 2, като след това се изпълнява тялото на ```plus_one()```.
+Then proceed to the call to ``plus_two(result)``. Initially, result is set to 1 (from the previous call). An entry for ``plus_two()`` is then created, allocating memory for the ```x`` parameter. This entry is located in the same location as the last entry for the ``plus_one(0)`` call, and this location is reused. After the entry, the ```x``` parameter is initialized with the value 1. The body of ``plus_two()`` is then executed.  
+The body of ``plus_two()`` calls ``plus_one(x+1)``. The value of x + 1 = 2 is computed, then an entry is created for ``plus_one()``, allocating space for the parameter ``x``` and setting its value to 2 in the new entry, and then the body of ``plus_one()`` is executed.
 <img src="https://i.imgur.com/iKoSa9u.jpg" width=100% height=100%>  
-Новосъздаденият за ```plus_one()``` запис е различен от предишния - всяко извикване си създава собствен такъв, като декларираните там променливи са локални за него си. 
+The newly created record for ``plus_one()`` is different from the previous one - each call creates its own one, and the variables declared there are local to itself. 
 	
-## Статични и глобални променливи 
-Статичните променливи са променливи, които не губят стойността (задържат я) след като излезнат извън scope-a, в който са декларирани. Следователно, статичните променливи запазват предишната си стойност и не биват инициализирани отново при следващо извикване. Например  
+## Static and global variables 
+Static variables are variables that do not lose their value (hold it) once they go out of the scope they are declared in. Therefore, static variables retain their previous value and are not re-initialized the next time they are called. For example  
 ```c++	
 void returnSomething() {
 	int x = 0;
@@ -296,12 +296,12 @@ int main() {
 	return 0;
 }
 ```
-получаваме изход  
+we get the output  
 ```0 0 0 0 0```  
-докато ако обявим x за статична,т.е. при декларацията ```static int x = 0``` получаваме изход  
+while if we declare x to be static, i.e. with the declaration ``static int x = 0`` we get the output  
 ```0 1 2 3 4```  
-т.е. нейната стойност се запазва между извикванията на returnSomething().  
-Глобални променливи наричаме променливи, които не са локални, т.е. не са декларирани във функции (и в каквито и да е други scope-ове). Например  
+i.e. its value is preserved between calls to returnSomething().  
+We call global variables variables that are not local, i.e. not declared in functions (or any other scope). For example  
 ```c++
 #include<iostream>
 	
@@ -320,11 +320,11 @@ int main() {
 	return 0;
 }			  
 ```  
-изкарва ```6 7 8 9 10```.  
+outputs ``6 7 8 9 10``.  
 
-## Стойности по подразбиране на параметрите
+## Default parameter values
 
-Параметър с подразбираща се стойност в декларацията на една функция е параметър, на когото автоматично се задава стойност от компилатора, ако извикването на функцията не предостави такава. В случай, че такава се предостави - подразбиращата се стойност се заменя с тази, с която е извикана функцията. Например  
+A parameter with a default value in a function declaration is a parameter that is automatically assigned a value by the compiler if the function call does not provide one. In the event that one is provided - the default value is replaced with the one the function was called with. For example  
 ```c++
 int sum(int x, int y, int z = 0, int w = 0) //assigning default values to z,w as 0
 {
@@ -345,13 +345,13 @@ int main()
     return 0;
 }
 ```
-и получаваме изход  
+and we get the output  
 ```
 25
 50
 80
 ```
-Възможно е и да имаме и множество функции със същите: ***return type*** и име, но различен набор от параметри. Изборът на коя точно функция ще се изпълни става по време на компилация (compile-time polymorphism), като коя точно се извиква зависи изцяло от подадените параметри. Например  
+It is also possible to have multiple functions with the same: ***return type*** and name, but a different set of parameters. The choice of exactly which function to execute happens at compile-time (compile-time polymorphism), and exactly which one is called depends entirely on the parameters passed. For example  
 
 ```c++
 void printSum(int x, int y) {
@@ -364,7 +364,7 @@ void printSum(double x, double y) {
 }
 int main()
 {
-	printSum(2, 3);        //
+	printSum(2, 3); //
 	printSum(20.5, 3.2);
 
 		return 0;

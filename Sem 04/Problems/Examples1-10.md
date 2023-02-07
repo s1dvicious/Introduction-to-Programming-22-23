@@ -1,67 +1,67 @@
 <details>
-  <summary><b><u><font size="+5">Задача 1</font></u></b></summary>
- Въвежда се неотрицателно число n. Да се отпечатат всички двойки прости числа, които са във вида 6k-1 и  6k+1.
+  <summary><b><u><font size="+5">Task 1</font></u></b></summary>
+ Enter a non-negative number n. Print all pairs of prime numbers that are of the form 6k-1 and 6k+1.
 </details>
 
 <details>
-  <summary><b><u>Задача 2</u></b></summary>
-  Напишете функция, която приема неотрицателно число n и връща числото обърнато  
+  <summary><b><u>Task 2</u></b></summary>
+  Write a function that takes a non-negative number n and returns the number inverted  
   
-*Вход: 288, Изход: 882*
+*Input: 288, Output: 882*
 </details>
 
 <details>
-  <summary><b><u>Задача 3</u></b></summary>
- Напишете функция, която приема неотрицателно число и връща дали числото е палиндром.
+  <summary><b><u>Task 3</u></b></summary>
+ Write a function that takes a non-negative number and returns whether the number is a palindrome.
 
-*Вход: 2882 Изход: true*
+*Input: 2882 Output: true*
 </details>
 
 <details>
-  <summary><b><u>Задача 4</u></b></summary>
-Напишете функция, която приема неотрицателни числа n и k и връща дали k е суфикс на n.
+  <summary><b><u>Task 4</u></b></summary>
+Write a function that takes non-negative numbers n and k and returns whether k is a suffix of n.
 
-*Вход: 288, 88, Изход: true*
+*Input: 288, 88, Output: true*
 </details>
 <details>
-  <summary><b><u>Задача 5</u></b></summary>
- Напишете функция, която приема неотрицателни числа n и k и връща дали k е префикс на n.
+  <summary><b><u>Task 5</u></b></summary>
+ Write a function that takes non-negative numbers n and k and returns whether k is a prefix of n.
 
-*Вход: 288, 28, Изход: true*
+*Input: 288, 28, Output: true*
 </details>
 <details>
- <summary><b><u>Задача 6</u></b></summary>
- Напишете функция, която приема неотрицателни числа n и k и връща дали k е инфикс в n.
+ <summary><b><u>Task 6</u></b></summary>
+ Write a function that accepts non-negative numbers n and k and returns whether k is an infix in n.
 
-*Вход: 2831, 83, Изход: true*
+*Input: 2831, 83, Output: true*
 </details>
 <details>
- <summary><b><u>Задача 7</u></b></summary>
- Напишете функция, която приема неотрицателно число и връща дали цифрите му са сортирани (във възходящ или в низходящ ред).
+ <summary><b><u>Task 7</u></b></summary>
+ Write a function that takes a non-negative number and returns whether its digits are sorted (in ascending or descending order).
 
-*Вход: 122239,  Изход: true*
+*Input: 122239, Output: true*
 </details>
 <details>
- <summary><b><u>Задача 8</u></b></summary>
- Напишете функция, която приема неотрицателно число и връща дали цифрите му са еднакви.
+ <summary><b><u>Task 8</u></b></summary>
+ Write a function that takes a non-negative number and returns whether its digits are the same.
 
-*Вход: 111111,  Изход: true*
+*Input: 111111, Output: true*
 </details>
 <details>
- <summary><b><u>Задача 9</u></b></summary>
-Напишете функция, която приема неотрицателно числа n и k връща n^k
+ <summary><b><u>Task 9</u></b></summary>
+Write a function that takes non-negative numbers n and k returns n^k
 
-*Вход: 3 4,  Изход: 81*
+*Input: 3 4, Output: 81*
 </details>
 <details>
- <summary><b><u>Задача 10</u></b></summary>
- Напишете функция, която приема неотрицателно числа n и k връща log_k(n) (закръглено надолу)
+ <summary><b><u>Task 10</u></b></summary>
+ Write a function that takes non-negative numbers n and k returns log_k(n) (rounded down)
 
-*Вход: 90 3  Изход: 4*
+*Input: 90 3 Output: 4*
 </details>
 <details>
- <summary><b><u>Задача 11</u></b></summary>
- Напишете функция, която дадено по подадено естествено число N, връща число, което е резултат от конкатенацията на обърнатото число на N с подаденото N.
+ <summary><b><u>Task 11</u></b></summary>
+ Write a function that, given a given natural number N, returns a number that is the result of concatenating the inverse of N with the given N.
 
-*Вход: 1234  Изход: 43211234*
+*Input: 1234 Output: 43211234*
 </details>

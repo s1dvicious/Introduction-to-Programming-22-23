@@ -1,16 +1,16 @@
-***Bulls and Cows*** е игра за разкодиране, която се играе между двама (или повече) играча, която (оригинално) се играе с 4 цифри. Двамата записват две 4-цифрени числа, като те задължително ***трябва*** да бъдат различни. След това играчите последователно правят опити да разкодират числата на противника си, като всеки път "налучкват"
-4-цифрено число. Ако съвпадащите цифри са на същите позиции, то те са бикове, а ако са на различни - те са крави, като противникът съобщава количествата бикове и крави, съответстващи на числото на опонента си. Например:
+***Bulls and Cows*** is a decoding game played between two (or more) players, which (originally) was played with 4 digits. The two players write down two 4-digit numbers, and they must ***must*** be different. The players then take turns trying to decode their opponent's numbers, each time "figuring out"
+4-digit number. If the matching digits are in the same positions, they are bulls, and if they are in different positions, they are cows, with the opponent reporting the quantities of bulls and cows corresponding to their opponent's number. For example:
 ```
-- Тайното число на Играч 1: 8405
-- Налучкано от Играч 2:     1203
-- Отговор на Играч 1:       1 Бик и 0 крави (т.к. 0 е на същата позиция като тайното число, а останалите цифри не се съдържат в него);
+- Player 1's secret number: 8405
+- Player 2's guess: 1203
+- Player 1's answer: 1 Bull and 0 Cows (i.e. 0 is in the same position as the secret number and the other digits are not contained in it);
 ```
-или
+Or
 ```
-- Тайното число на Играч 1: 9502
-- Налучкано от Играч 2: 9320
-- Отговор на Играч 1: 1 Бик, 2 крави (т.к. 9 е на същата позиция като тайното число, а 2 и 0 се съдържат в него, обаче на грешни позиции);
+- Player 1's secret number: 9502
+- Player 2's number: 9320
+- Player 1's answer: 1 Bull, 2 cows (i.e. 9 is in the same position as the secret number, and 2 and 0 are contained in it, but in the wrong positions);
 ```
-Т.е. играта продължава докато единият от играчите не достигне до 4 Бика и 0 крави.  
+That is, play continues until one player reaches 4 Bulls and 0 Cows.  
   
-Да се напише симулация на играта, като нека за улеснение направим следната модификация - първоначално се задава 4-цифрено число. След това потребителят последователно прави опити да "разкодира" числото по горе-указания начин - след всеки опит на екрана се принтират количеството бикове и крави и играта продължава до разкодирване на числото.
+Let's write a simulation of the game, with the following modification for simplicity - initially a 4-digit number is set. The user then makes successive attempts to "decode" the number in the above-described manner - after each attempt, the amount of Bulls and Cows are printed on the screen and the game continues until the number is decoded.

@@ -1,37 +1,37 @@
 <details>
-  <summary><b><u>Задача 1</u></b></summary>
- Напишете функция, която приема цяло число и връща модула му.
+  <summary><b><u>Task 1</u></b></summary>
+ Write a function that takes an integer and returns its modulus.
 
-*Вход: 4, Изход: 4*
+*Input: 4, Output: 4*
 
-*Вход: -4, Изход: 4*
+*Input: -4, Output: 4*
 
-*Вход: 5 4 3 0 Изход: 12*
+*Input: 5 4 3 0 Output: 12*
 </details>
 <details>
-  <summary><b><u>Задача 2</u></b></summary>
- Напишете функция, която приема 4 цели числа - координати на 2 точки. Функцията да връща разстоянието между тези точки. 
+  <summary><b><u>Task 2</u></b></summary>
+ Write a function that takes 4 integer coordinates of 2 points. The function should return the distance between these points. 
 
-*Вход: 1 1 4  3, Изход: 3,605*
+*Input: 1 1 4 3, Output: 3,605*
 </details>
 <details>
-  <summary><b><u>Задача 3</u></b></summary>
-Напишете функция, която приема 6 целочислени координати (3 точки) и връща обиколката на триъгълника по тези точки.
+  <summary><b><u>Task 3</u></b></summary>
+Write a function that takes 6 integer coordinates (3 points) and returns the perimeter of the triangle at those points.
 
-*Вход: 1 1 4 7 0 10, Изход: 20.764*
+*Input: 1 1 4 7 0 10, Output: 20.764*
 </details>
 <details>
-  <summary><b><u>Задача 4</u></b></summary>
-Да се напише функция, която приема три естествени числа a и b и k отпечатва всички числа в интервата [a...b], които имат точно k различни прости делители.
-*Вход: 19 32 3, Изход: 20 30*
-*Вход: 19 32 1, Изход: 19 23 29 31*
+  <summary><b><u>Task 4</u></b></summary>
+Write a function that takes three natural numbers a and b and k prints all numbers in the interval [a...b] that have exactly k distinct prime factors.
+*Input: 19 32 3, Output: 20 30*
+*Input: 19 32 1, Output: 19 23 29 31*
 </details>
 <details>
-  <summary><b><u>Задача 5</u></b></summary>
-Да се напише функция, която приема естествено число n и отпечатва всички двойки <a,b>, такива че a и b са прости и a + b = n.
+  <summary><b><u>Task 5</u></b></summary>
+Write a function that takes a natural number n and prints all pairs <a,b> such that a and b are prime and a + b = n.
 </details>
   <details>
-   <summary><b><u>Задача 6</u></b></summary>
-Да се напише функция, която приема две естествени числа a и b и отпечава всички числа k и интервала [a,b], такива че k = x^y (за някои ест. числа x и y)
-*Вход: 15 30, Изход:  16 25 27*   , защото (4^2,  5^2, 3^3)
+   <summary><b><u>Task 6</u></b></summary>
+Write a function that takes two natural numbers a and b and unbakes all the numbers k and the interval [a,b] such that k = x^y (for some natural numbers x and y)
+*Input: 15 30, Output: 16 25 27* , because (4^2, 5^2, 3^3)
 </details>
