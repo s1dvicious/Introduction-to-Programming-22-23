@@ -1,37 +1,37 @@
-**Задача 1:** Въвежда се цяло число. Отпечатайте 1, ако числото е четно и 0, ако е нечетно.
+**Problem 1:** Enter an integer. Print 1 if the number is even and 0 if it is odd.
 
-*Вход: 265, Изход: 0*
+*Input: 265, Output: 0*
 
-*Вход: 290, Изход: 1*
+*Input: 290, Output: 1*
 
-  **Задача 2:**  Въвежа се цяло число. Да се отпечата без последната цифра.
+  **Problem 2:** Enter an integer. Print it without the last digit.
 
-*Вход: 513, Изход: 51*
+*Input: 513, Output: 51*
 
-*Вход: 1234, Изход: 123*
+*Input: 1234, Output: 123*
   
-  **Задача 3:** Въвежда се трицифрено цяло число n. Да се отпечата обърнатото число събрано с единица.
+  **Problem 3:** Enter a three-digit integer n. Print the inverted number added with one.
 
-*Вход: 265, Изход: 563*
+*Input: 265, Output: 563*
 
-*Вход: 289, Изход: 983*
+*Input: 289, Output: 983*
   
- **Задача 4:**  Напишете програма, която въвежда две числа - a и b и извежда като резултат (a + b)^4 - (a-b)^2
+ **Problem 4:** Write a program that inputs two numbers, a and b, and outputs as the result (a + b)^4 - (a-b)^2
  
-*Вход: 5 7, Изход: 20732*
+*Input: 5 7, Output: 20732*
 
-**Задача 5:**  Въвежа се символ. Да се отпечата 1, ако е английска гласна буква, и 0, ако не е.
+**Problem 5:** Enter a symbol. Print 1 if it is an English vowel letter and 0 if it is not.
 
-*Вход: а, Изход: 1*
+*Input: a, Output: 1*
 
-*Вход: Е, Изход: 1*
+*Input: e, Output: 1*
 
-*Вход: В, Изход: 0*
+*Input: B, Output: 0*
 
-**Задача 6:**  Въвежа се цяло число. Да се отпечата 1, ако числото е валидна оценка от училище, и 0, ако не е валидна.
+**Problem 6:** Enter an integer. Print 1 if the number is a valid school grade, and 0 if it is not valid.
 
-*Вход: 5, Изход: 1*
+*Input: 5, Output: 1*
 
-*Вход: 3, Изход: 1*
+*Input: 3, Output: 1*
 
-*Вход: 9, Изход: 0*
+*Input: 9, Output: 0*
