@@ -1,64 +1,64 @@
-<h2 id="">1. Const изрази</h2>  
+<h2 id="">1. Const expressions</h2>  
 
-Програмите на практика използват множество константи. Например, за една програма, извършваща геометрични пресмятания би ни било необходимо числото pi = 3.14159 (апроксимация до 5тото число след плаващата запетая). В тази програма ние не бихме искали да позволяваме промяна на този израз (константен), т.к. в последствие може да се промени значението му. C++ въвежда понятието за символични константи, т.е. обект с име, на когото не може да се присвояват нови стойности след инициализация. Например  
+Programs actually use multiple constants. For example, for a program performing geometric calculations we would need the number pi = 3.14159 (approximation to the 5th floating point number). In this program, we would not want to allow this expression (constant) to change, since its meaning might change later. C++ introduces the concept of symbolic constants, i.e. an object with a name to which no new values can be assigned after initialization. For example  
 ```c++
-const double pi = 3.14159; 
+double const pi = 3.14159; 
 double radius = 5;
-pi = 7;                     //error:assignment to const
-int per = 2*pi*radius;      //ok, we just read pi, we don't try to change it
+pi = 7; //error:assignment to const
+int per = 2*pi*radius; //ok, we just read pi, we don't try to change it
 ```
- Такива константи са полезни за четимост на кода - вместо да се въвеждат магически константи (т.е. неочевидни литерали) те се връзват за константни изрази и тяхната стойност се свързва с името на променливата. 
+ Such constants are useful for code readability - instead of introducing magic constants (i.e. non-obvious literals) they are bound to constant expressions and their value is bound to the variable name. 
 
-## 2. Условни конструкции
+## 2. Conditional statements
 
 <h3 id="">if - else</h3>
-Това е най-простата конструкция, която можем да ползваме и нейната семантика е  
+This is the simplest statement we can use and its semantics is  
 
 ```c++
 if(<condition>)
 {
-		//изпълнява се, ако условието е истина. 
+		//executes if the condition is true. 
 }
-else //не е задължителен компонент
+else //not a required component
 {
-		//изпълнява се, ако условието е лъжа. 
+		//executes if the condition is false. 
 }
 ```
 
-като flowchart това графично може и да се изобрази като  
+as a flowchart this can graphically be displayed as  
 <img src="https://codeforwin.org/wp-content/uploads/2017/08/if-else-statement-flow-chart.png" width=50% height=50%>   
 
 <h3 id="">if - else if -else</h3>
-Възниква и else if(<condition>) израза, който е "вързан" за if израз :  
+The else if(<condition>) expression also occurs, which is "bound" for the if expression :  
 	
 ```c++
 if(<condition1>)
 {
-	//изпълнява се, ако <condition1> е истина. 
+	//executes if <condition1> is true. 
 }
 else if(<condition2>)
 {
-	//изпълнява се, ако <condition1> е лъжа и <condition2> е истина. . 
+	//executes if <condition1> is false and <condition2> is true. . 
 }
 .
 .
 .
 else if(<conditionK>)
 {
-		//изпълнява се, ако <condition1>..<conditionK-1> са лъжа и <conditionК> е истина. . 
+		//executes if <condition1>..<conditionK-1> are false and <conditionK> is true. . 
 }
-else //не е задължителен компонент
+else //not a required component
 {
-		//изпълнява се, ако всички горни условия са лъжа. 
+		//executes if all of the above conditions are false. 
 }
 ```
-и отново като flowchart  
+and again as flowchart  
 	
 <img src="https://codeforwin.org/wp-content/uploads/2017/08/ladder-if...else_...if-statement-flow-chart.png" width=35% height=35%>   
 	
 <h2 id="">Switch statement</h2>
 	
-Използва се за изпълняване на парче код, като изборът се извършва измежду множество алтернативи.
+It is used to execute a piece of code, choosing from multiple alternatives.
 ```c++	
 switch(<expression>)
 {
@@ -78,15 +78,15 @@ switch(<expression>)
 	break; //optional.
 }
 ```
-break индикира да се терминира "цикъла" - използването му не е задължително, но ако липсва - директно нахлува в блоковете, съответстващи на следващите case-ове (т.е. без да прави проверка) и ги изпълнява, докато не стигне до break  
+break indicates to terminate the "loop" - its use is optional, but if it is missing - it directly invades the blocks corresponding to the next case (i.e. without checking) and executes them until it reaches break  
 <img src="https://cdn.programiz.com/sites/tutorial2program/files/flowchart-switch-statement.jpg" width=35% height=35%>     
 
-<h3 id="">Тернарен оператор</h3>
-Тернарния оператор (или shorthand if-else) е израз, който в общи линии наследява функционалността на if-else-а, неговата семантика е
+<h3 id="">Ternary operator</h3>
+The ternary operator (or shorthand if-else) is an expression that basically inherits the functionality of if-else, its semantics is
 	
 ```c++
-<условие> ? <израз1> : <израз2>
+<condition> ? <expression1> : <expression2>
 ```
 
-Ако условието е истина, се връща оценката на израз1.
-Ако е лъжа, то се връща оценката на израз2.
+If the condition is true, the evaluation of expression1 is returned.
+If false, the evaluation of expression2 is returned.

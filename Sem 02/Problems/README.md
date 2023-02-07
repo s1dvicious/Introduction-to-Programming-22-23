@@ -1,83 +1,84 @@
-<h3>Задачи</h3>
+<h3>Objectives</h3>
 
-**Задача 1:** Да се напише програма, която въвежда цяло число отпечатава с думи кой ден от седмицата е.
+**Task 1:** Write a program that prints in words which day of the week it is.
 
-*Вход: 1, Изход: Monday*
+*Input: 1, Output: Monday*
 
-*Вход: 5, Изход: Friday*
+*Input: 5, Output: Friday*
 
-*Вход: 250, Изход: Invalid day!*
+*Input: 250, Output: Invalid day!*
 
-**Задача 2 (Between 100 and 200):** Да се напише програма, която въвежда цяло число и проверява дали е под 100, между
-100 и 200 или над 200. Да се отпечатат съответно съобщения като в примерите по-долу:
+**Problem 2 (Between 100 and 200):** Write a program that enters an integer and checks if it is below 100, between
+100 and 200 or above 200. Print messages accordingly as in the examples below:
 
-*Вход: 95, Изход: Less than 100*
+*Input: 95, Output: Less than 100*
 
-*Вход: 120, Изход: Between 100 and 200*
+*Input: 120, Output: Between 100 and 200*
 
-*Вход: 250, Изход: Greater than 200*
+*Input: 250, Output: Greater than 200*
 
-**Задача 3 (Speed trap):** Да се напише програма, която въвежда скорост (десетично число) и отпечатва
-информация за скоростта. При скорост до 10 (включително) отпечатайте “slow”. При
-скорост над 10 и до 50 отпечатайте “average”. При скорост над 50 и до 150 отпечатайте
-“fast”. При скорост над 150 и до 1000 отпечатайте “ultra fast”. При по-висока скорост
-отпечатайте “extremely fast”
+**Problem 3 (Speed trap):** Write a program that enters a speed (decimal number) and prints
+speed information. For speeds up to and including 10, print "slow". At
+speed above 10 and up to 50, print "average". For speeds over 50 and up to 150, print
+"fast". At speeds above 150 and up to 1000 print "ultra fast". At higher speeds
+print "extremely fast"
 
-*Вход: 8, Изход: slow*
+*Input: 8, Output: slow*
 
-*Вход: 49.5, Изход: average*
+*Input: 49.5, Output: average*
 
-*Вход: 126, Изход: fast*
+*Input: 126, Output: fast*
 
-*Вход: 3500, Изход: extremely fast*
+*Input: 3500, Output: extremely fast*
 
-**Задача 4 (Лице на фигура):**  Да се напише програма, която въвежда размерите на геометрична фигура и пресмята
-лицето й. Фигурите са четири вида: квадрат (s), правоъгълник (r), кръг (c) и триъгълник
-(triangle). На първия ред на входа се чете вида на фигурата (square, rectangle, circle или
-triangle). Ако фигурата е квадрат, на следващия ред се чете едно число – дължина на
-страната му. Ако фигурата е правоъгълник, на следващите два реда четат две числа –
-дължините на страните му. Ако фигурата е кръг, на следващия ред чете едно число –
-радиусът на кръга. Ако фигурата е триъгълник, на следващите два реда четат две числа
-– дължината на страната му и дължината на височината към нея. Резултатът да се
-закръгли до 3 цифри след десетичната точка
+**Problem 4 (Figure face):** Write a program that inputs the dimensions of a geometric figure and computes
+its face. There are four types of shapes: square (s), rectangle (r), circle (c) and triangle
+(triangle). The first line of input reads the type of shape (square, rectangle, circle or
+triangle). If the shape is a square, the next line reads one number - the length of the
+side. If the shape is a rectangle, the next two lines read two numbers -
+the lengths of its sides. If the figure is a circle, the next line reads one number -
+the radius of the circle. If the figure is a triangle, the next two lines read two numbers
+- the length of its side and the length of the height to it. The result to
+round to 3 digits after the decimal point
 
-*Вход: s 5 , Изход: 25*
+*Input: s 5 , Output: 25*
 
-*Вход: r 7 2.5, Изход: 17.5*
+*Input: r 7 2.5 , Output: 17.5*
 
-*Вход: c 6, Изход: 113.097*
+*Input: c 6 , Output: 113.097*
 
-**Задача 5 (Време + 15 минути) :** 
-Да се напише програма, която въвежда час и минути от 24-часово денонощие и изчислява
-колко ще е часът след 15 минути. Резултатът да се отпечата във формат hh:mm.
-Часовете винаги са между 0 и 23, а минутите винаги са между 0 и 59.
-Часовете и минутите се изписват винаги с по две цифри, с водеща
-нула когато е необходимо
+**Problem 5 (Time + 15 minutes) :** 
+Write a program that enters the hour and minutes of a 24-hour day and calculates
+what the hour will be in 15 minutes. Print the result in hh:mm format.
+The hours are always between 0 and 23, and the minutes are always between 0 and 59.
+The hours and minutes are always written in two digits, with a leading
+zero where necessary
 
-*Вход: 1 46, Изход: 02:01*
+*In: 1 46, Out: 02:01*
 
-*Вход: 0 1, Изход: 00:16*
+*Input: 0 1, Output: 00:16*
 
-*Вход: 23 59, Изход: 00:14*
-
-
-**Задача 6 :** 
-Ще казваме, че поредица от числа е трион, ако всяко число в нея е едновременно поголямо или равно от двата си съседа или пък едновременно по-малко или равно от тях.
-За първия и последния елемент имаме само по един съсед. 
-Напишете програма, която въвежда от стандартния 5 на брой цели числа. Да се изведе
-на стандартния изход "yes", ако въведената поредица е трион, или "no", в противен
-случай.
-
-*Вход: 1 5 1 0 3 , Изход: no*
-
-*Вход: -10 10 -2 11 -22 , Изход: yes*
+*Input: 23 59, Output: 00:14*
 
 
-**Задача 7 :** 
-Да се напише програма, която при подадени радиус r и двумерна точка (х, у) проверява дали точката се намира вътре/извън или по контура на окръжност с център (0,0).
+**Task 6 :** 
+We will say that a sequence of numbers is a saw if each number in it is both greater than or equal to its two neighbors, or both less than or equal to them.
+For the first and last elements, we have only one neighbor each. 
+Write a program that inputs from the standard 5's number of integers. To output
+to the standard output "yes" if the sequence entered is sawtooth, or "no" otherwise
+Otherwise.
 
-*Вход: 5 0 5, Изход: On the circle*
+*Input: 1 5 1 0 3 , Output: no*
 
-*Вход: 5 10 30, Изход: Out of the circle*
+*Input: -10 10 -2 11 -22 , Output: yes*
 
-*Вход: 5 0 2, Изход: In the circle*
+
+**Problem 7 :** 
+Write a program that, given a radius r and a two-dimensional point (x, y), checks whether the point is inside/outside or on the contour of a circle centered at (0,0).
+
+*Input: 5 0 5, Output: On the circle*
+
+*Input: 5 10 30, Output: Out of the circle*
+
+*Input: 5 0 2, Output: In the circle*
+
